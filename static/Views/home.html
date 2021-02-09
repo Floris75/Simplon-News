@@ -7,52 +7,70 @@
     <title>Homepage</title>
 </head>
 <body>
-    <header> 
-        <div id="banner"></div>
-<nav>
- <h1>Simplonnews</h1>
-    <ul>
-        <li"logo" alt="logo"> </li>
-        <li><a href=>home</a></li> 
-        <li><a href=>A la une</a></li>
-        <li><a href=>Direct</a></li>
-        <li><a href=>A l'international</a></li>
-        <li><a href=>Contact</a></li>
-    </ul>
-</nav>
-</header> 
-<section>
-    <img src="mon image" alt="">
-    <div>
-        <h3>titre1</h3>
-        <h3>titre2</h3>
-        <h3>titre3</h3>
-    </div>
 
-    <aside>
-        <img src="" alt="">
-        <img src="" alt="">
+    <!-- Header -->
+
+    <header> 
+        <div id="banner">
+            <h1>SIMPLON NEWS</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><img src="../Images/logo simplon 1.jpg" alt=""> </li>
+                <li><a href="#banner">home</a></li> 
+                <li><a href="#Une">A la une</a></li>
+                <li><a href="#Direct">Direct</a></li>
+                <li><a href="#Divers">Divers</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <!-- A la une + Direct -->
+
+    <section>
+        <figure id="Une">
+            <img src="../Images/template_article.jpeg" alt="mon image">
+            <figcaption>Titre</figcaption>
+        </figure>
+        
+        <aside id="Direct">
+            <h2>Direct</h2>
+            <h3>titre1</h3>
+            <hr>
+            <h3>titre2</h3>
+            <hr>
+            <h3>titre3</h3>
+        </aside>
+    </section>
+
+    <!-- Divers -->
+
+    <section id="divers">
+        <img src="../Images/template_article.jpeg" alt="inmage">
+        <img src="../Images/template_article.jpeg" alt="image">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ad commodi corrupti incidunt odio modi recusandae voluptates, facilis ipsum non nesciunt facere repellat dolorum velit assumenda tenetur explicabo aspernatur veritatis?</p>
-    </aside>
-</section>
-<section>
-    <form>
-        <div class="TextFond"><h2>Contacter</h2></div> 
-        <input type="Entre votre nom">
-        <input type="Entre votre email">
-        <input type="Entre votre phone number">
-        <input type="submit"/>
-    </form>   
-</section>
-<footer>
-    <figure>
-        <img src="facebook" alt=/>
-        <img src="tweeter" alt=/>
-        <img src="inestgram" alt=/>
-    </figure>
-    <p>Floris_Nabila_Mamadou_copyright@2021</p>
-</footer>
-    
+    </section>
+
+    <!-- Footer -->
+
+    <footer id="footer">
+        <a href="#">
+            <h3> About us </h3>
+        </a>  
+        <hr>      
+        <a href="#">
+            <h3>Contact us</h3>
+        </a>      
+        <hr>
+        <h3>Follow us</h3>
+        <a href="http://www.facebook.com"><img src="./static/Images/facebook.png" alt="logo Facebook"> Facebook</a>
+        <a href="http://www.twitter.com"><img src="./static/Images/twitter.png" alt="logo twitter"> Twitter</a>
+        <a href="http://www.instagram.com"><img src="./static/Images/instagram.png" alt="logo instagram"> Instagram</a>
+        <a href="http://www.linkedin.com"><img src="./static/Images/linkedin.png" alt="logo linkedin"> Linkedin</a>
+        <hr>
+        <p>&#169 SIMPLON NEWS-2021</p>
+    </footer>  
 </body>
 <script src="/static/JS/home.js"></script>
 </html>
