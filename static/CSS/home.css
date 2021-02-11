@@ -2,8 +2,446 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+    
 }
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+/* header */
+
+header{
+    background-color: #9A1F40;
+  height: 8%;
+
+}
+h1{
+    color: black;
+}
+h2{
+    text-align: center;
+}
+
+#banner{
+   display: flex;
+    justify-content: center;
+    
+    z-index: 1;
+   
+  
+}
+
+section {
+    overflow-x: hidden;
+}
+
+.menub{
+    display: none;
+}
+
+
+/* menu burger */
+
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    opacity: 5px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    transform: translateX(100%);
+    transition: 0.5s;
+}
+.menu-open{
+    transform: translateX(0);
+    display: flex;
+}
+.menu a{
+    margin-left:0;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+   
+}
+
+
+
+.burger, .menu > a{
+    /* background: none; */
+    padding: 0 0 10px 10px;
+     z-index: 1;
+}
+
+.burger span{
+    margin: 6px 0;
+    width: 40px; 
+    height: 5px;
+    background: black;
+    border-radius: 54px;
+    display: block;
+    transition: 0.5s;
+}
+
+
+
+.burger {
+    display: block;
+    cursor: pointer;
+}
+
+
+.burger-cross span{
+    background-color: white;
+}
+.burger-cross span:first-child {
+    transform: rotate(45deg) translate(7px, 8px);
+}
+.burger-cross span:last-child {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.burger-cross span:nth-child(2) {
+    opacity: 0;
+}
+
+
+
+/* UNE */
+
+#Une>img{
+    height: 200px;
+    width: 100%;
+
+}
+#Une>figcaption{
+    width: 100%;
+height: 100px;
+background-color: rgba(255, 255,255, 0.8);
+color: black;
+text-align: center;
+font-size: 1.5rem;
+padding-top: 10px;
+
+}
+
+/* ASIDE */
+
+aside{
+    padding-top: 30px;
+   
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+    gap: 15px;
+}
+aside>h2{
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+aside>h3,h3{
+    font-size: 1.5rem;
+    
+}
+aside>hr{
+    width: 90%;
+   size: 5px;
+}
+h2{
+    font-size: 2rem;
+    color: #148DC9;
+}
+
+/* DIVERS */
+
+#divers{
+    display: flex;
+   text-align: center;
+    flex-direction: column;
+    height: 350px;
+   
+    
+}
+
+#divers>div>figure>img{
+    height: 70px;
+}
+
+#divers>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px 0 10px;
+    height: 100px;
+   
+    
+}
+#divers>div>figcaption{
+    
+    color: white;
+}
+
+/* FOOTER */
+
+#footer{
+    background-color: #148DC9;
+    color: black;
+   height: 200px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+
+}
+#footer>a>h3{
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    padding-top: 20px;
+
+}
+
+#footer>a{
+    text-decoration: none;
+    gap: 40px;
+
+}
+footer>h3{
+    font-size: 2rem;
+    padding-top: 20px;
+}
+
+.hr{
+    color: black;
+    width: 20%;
+    height: 4px;
+    background-color: black;
+    border: black solid 2px;
+
+}
+
+.end{
+    width: 70%;
+color: black;
+   border: black solid 1px;
+}
+footer>p{
+    padding-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+footer>.reseau>a>img{
+    
+height: 20px;
+width: 20px;
+}
+
+@media screen and (min-width:481px){
+    
+    header{
+        
+        display: flex;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+       
+        flex-direction: column;
+    }
+
+   /* UNE */
+
+    img{
+        object-fit: contain;
+    }
+    #Une>figcaption{
+        height: 120px;
+
+    }
+
+    
+    /* DIRECT    */
+    
+        
+    #Direct{
+        height: 400px;
+        gap: 40px;
+    }
+
+    /* DIVERS */
+    #divers>div>figcaption{
+        font-size: 1.4rem;
+    }
+
+    /* FOOTER */
+
+    #footer{
+        height: 200px;
+    }
+  
+    
+}
+
+@media screen and (min-width:1200px){
+
+    header{
+        height: 120px;
+        display: flex; 
+       
+        justify-content: center;
+        flex-direction: column;
+    }
+    h1{
+        font-size: 3.8rem;
+       
+    }
+
+  h2{
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    /* NAV */
+    header>.menub{
+        display: flex;
+        gap: 100px;
+        justify-content: center;
+        font-size: 2.8rem;
+        padding-top: 20px;
+        
+    }
+    
+    /* CACHER LE MENU BURGER */
+    .burger{
+        display: none;
+    }
+    /* FAIRE APPARAITRE NAV */
+ .menub{
+        display: block;
+        
+    }
+    header>.menub>a{
+        
+        display: flex;
+        text-decoration: none;
+        flex-direction: row;
+        color: black;
+
+    }
+
+    /* SECTION MAIN */
+    main{
+        display: flex;
+        gap: 4%;
+        padding-bottom: 70px;
+    }
+
+    /* MAIN>#UNE */
+
+  #One{
+        
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px;
+
+    }
+  #Une>img{
+      height: 300px;
+  }
+  #Une>figcaption{
+      padding-bottom: 30px;
+  }
+
+    
+    #figure>img{
+        height: 300px;
+    }
+
+    /* MAIN>DIRECT */
+    #Direct{
+       
+        width: 35%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #Direct>h2{
+        font-size: 4rem;
+    }
+    #Direct>h3{
+        font-size: 1.8rem;
+    }
+
+    
+   
+   /* DIVERS */
+  
+#divers{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 500px;
+
+    }
+    #divers>div{ 
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 250px;
+    }
+    #divers>div>figure>img{
+        height: 150px;
+     
+        
+    }
+   #divers>div>figcaption{
+       
+       width: 50%;
+       height: 100px;
+       font-size: 2.2rem;
+
+   }
+
+   /* FOOTER */
+   
+#footer{
+    height: 300px;
+
+}
+#footer>a>h3{
+    font-size: 3rem;
+}
+#footer>h3{
+    font-size: 3rem;
+}
+#footer>p{
+    font-size: 3rem;
+}
+
+
+#footer>.reseau>a>img{
+height: 60px;
+width: 40px;
+}
+}
+   
