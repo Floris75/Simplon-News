@@ -1,3 +1,5 @@
+/* GENERALS */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,4 +8,251 @@
 
 html {
     font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: black;
+    color: #C4C4C4;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100px;
+    background-color: #9A1F40;
+    width: 100%;
+}
+
+header a {
+    color: black;
+}
+
+h1 {
+    color: black;
+    font-size: 4rem;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+/* MAIN */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main h2 {
+    font-size: 2.5rem;
+}
+
+#login, #SignUp {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0;
+    min-height: 80%;
+}
+
+#login.inactive, #SignUp.inactive {
+    display: none;
+}
+
+section > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form, label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 96%;
+}
+
+main hr.notOnMobile {
+    display: none;
+}
+
+input {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+label {
+    font-size: 2rem;
+}
+
+input[type="submit"] {
+    width: 50%;
+    font-size: 2rem;
+    background-color: #148DC9;
+    color: black;
+}
+
+section h2, section label, section a {
+    padding: 3% 0;
+}
+
+section input {
+    margin: 3% 0;
+}
+
+#login a, #SignUp a {
+    font-size: 1.5rem;
+    color: #C4C4C4;
+    padding-left: 4%;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex; 
+    flex-direction: column;
+    min-height: 180px;
+    background-color: #148DC9;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 100%;
+}
+
+footer a {
+    color: black;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    background-color: black;
+    color: black;
+    width: 85%;
+    padding: 2px 0;
+    margin: 3% 0;
+}
+#FollowUs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#FollowUs div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3%;
+}
+
+#FollowUs img {
+    width: 30%;
+}
+
+footer h3 {
+    font-size: 2rem;
+}
+
+footer div {
+    width: 100%;
+    text-align: center;
+}
+
+footer div:first-child {
+    margin-top: 3%;
+}
+
+footer div p {
+    font-size: 1.5rem;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+@media screen and (min-width:481px) {
+    /* MAIN */
+
+    main {
+        margin: 2% 0;
+        min-height: 420px ;
+    }
+    
+    #login.inactive, #SignUp.inactive {
+        display: flex;
+    }
+
+    #login a, #SignUp a {
+        display: none;
+    }
+
+    #login, #SignUp {
+        width: 40%;
+        height: 100%;
+    }
+
+    main hr {
+        display: flex;
+        background-color: #C4C4C4;
+        color: #C4C4C4;
+        width: 2px;
+        height: 400px;
+        padding: 2px;
+        margin: 0;
+    }
+    main article {
+        height: 100%;
+    }
+    main > div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* FOOTER */
+
+    footer {
+        padding: 2% 0;
+    }
+    footer section {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    footer section hr {
+        width: 2px;
+        height: 100px;
+        padding: 2px;
+        margin: 0;
+    }
+
+    footer section div:first-child {
+        margin-top: 0;
+    }
+
+    footer > hr {
+        display: none;
+    }
+
+    footer div p {
+        padding: 1%;
+    }
+
 }
