@@ -12,7 +12,6 @@ html {
 
 body {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -91,17 +90,17 @@ main hr.notOnMobile {
 }
 
 input {
-    width: 100%;
-    font-size: 1.5rem;
+    width: 75%;
+    font-size: 2rem;
 }
 
 label {
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
 input[type="submit"] {
     width: 50%;
-    font-size: 2rem;
+    font-size: 2.2rem;
     background-color: #148DC9;
     color: black;
 }
