@@ -3,53 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/CSS/home.css">
+    <link rel="stylesheet" href="../CSS/home.css">
     <title>Homepage</title>
 </head>
 <body>
 
+   
+
+        
+
+   
+
     <!-- Header -->
 
     <header> 
-        <div id="banner">
+      
+         <div id="banner">
             <h1>SIMPLON NEWS</h1>
         </div>
-        <nav>
-            <ul>
-                <li><img src="../Images/logo simplon 1.jpg" alt=""> </li>
-                <li><a href="#banner">home</a></li> 
-                <li><a href="#Une">A la une</a></li>
-                <li><a href="#Direct">Direct</a></li>
-                <li><a href="#Divers">Divers</a></li>
-                <li><a href="#footer">Contact</a></li>
-            </ul>
+        <nav class="menub">
+           
+            <!-- <img src="../Images/logo simplon 1.jpg" alt="">  -->
+              <a href="#banner">home</a>
+              <a href="#Une">A la une</a>
+              <a href="#Direct">Direct</a>
+            <a href="#divers">Divers</a>
+              <a href="#footer">Contact</a>
+           
+       </nav>
+
+        <nav class="menu">
+           
+             <!-- <img src="../Images/logo simplon 1.jpg" alt="">  -->
+               <a href="#banner">home</a>
+               <a href="#Une">A la une</a>
+               <a href="#Direct">Direct</a>
+             <a href="#divers">Divers</a>
+               <a href="#footer">Contact</a>
+            
         </nav>
+
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+       </div>
     </header> 
 
     <!-- A la une + Direct -->
-
-    <section>
+<main>
+    <section id="One">
         <figure id="Une">
+            
             <img src="../Images/template_article.jpeg" alt="mon image">
-            <figcaption>Titre</figcaption>
+            <figcaption><h2>Info du jour</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eaque voluptate ad eligendi temporibus ipsam recusandae quaerat, aliquam atque quo nesciunt cum officiis</figcaption>
         </figure>
         
-        <aside id="Direct">
-            <h2>Direct</h2>
-            <h3>titre1</h3>
-            <hr>
-            <h3>titre2</h3>
-            <hr>
-            <h3>titre3</h3>
-        </aside>
+        
     </section>
-
+<aside id="Direct">
+            <h2>// Direct //</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing  </h3>
+            <hr>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing </h3>
+            <hr>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing </h3>
+            <hr>
+        </aside> 
+    
+    </main>
     <!-- Divers -->
 
+  
+ 
+     <h2>// Divers //</h2> 
+
     <section id="divers">
-        <img src="../Images/template_article.jpeg" alt="inmage">
-        <img src="../Images/template_article.jpeg" alt="image">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ad commodi corrupti incidunt odio modi recusandae voluptates, facilis ipsum non nesciunt facere repellat dolorum velit assumenda tenetur explicabo aspernatur veritatis?</p>
+       
+  
+        <div>
+            <figure> <img src="../Images/template_article.jpeg" alt="inmage"></figure>
+            <figcaption>
+            
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum dicta qui suscipit, deserunt, consectetur sapiente velit, </figcaption>
+        </div>
+
+        <div>
+            <figure> <img src="../Images/template_article.jpeg" alt="inmage"></figure>
+            <figcaption>
+            
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum dicta qui suscipit, deserunt, consectetur sapiente velit, </figcaption>
+        </div>
+    
+        <div>
+            <figure> <img src="../Images/template_article.jpeg" alt="inmage"></figure>
+            <figcaption>
+            
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum dicta qui suscipit, deserunt, consectetur sapiente velit, </figcaption>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -58,17 +109,19 @@
         <a href="#">
             <h3> About us </h3>
         </a>  
-        <hr>      
+        <hr class="hr">      
         <a href="#">
             <h3>Contact us</h3>
         </a>      
-        <hr>
+        <hr class="hr">
         <h3>Follow us</h3>
-        <a href="http://www.facebook.com"><img src="./static/Images/facebook.png" alt="logo Facebook"> Facebook</a>
-        <a href="http://www.twitter.com"><img src="./static/Images/twitter.png" alt="logo twitter"> Twitter</a>
-        <a href="http://www.instagram.com"><img src="./static/Images/instagram.png" alt="logo instagram"> Instagram</a>
-        <a href="http://www.linkedin.com"><img src="./static/Images/linkedin.png" alt="logo linkedin"> Linkedin</a>
-        <hr>
+        <div class="reseau">
+        <a href="http://www.facebook.com" ><img src="../Images/facebook.png" alt="logo Facebook"> Facebook</a>
+        <a href="http://www.twitter.com"><img src="../Images/twitter.png" alt="logo twitter"> Twitter</a>
+        <a href="http://www.instagram.com"><img src="../Images/instagram.png" alt="logo instagram"> Instagram</a>
+        <a href="http://www.linkedin.com"><img src="../Images/linkedin.png" alt="logo linkedin"> Linkedin</a>
+     </div>
+       <hr class="end">
         <p>&#169 SIMPLON NEWS-2021</p>
     </footer>  
 </body>
