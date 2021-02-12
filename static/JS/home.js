@@ -16,10 +16,9 @@ liens.forEach((lien) => {
     });
 });
 
-// CHECK LE LOCAL STORAGE
-let monStorage = localStorage; 
+// CHECK LA SESSION STORAGE
 function checkLocalStorage () {
-    if (monStorage.length === 0) {
+    if (sessionStorage.getItem("token")) {
         redirectionLogin();
     }
 }
@@ -28,11 +27,13 @@ function redirectionLogin () {
     window.location.href = "../../login.html"
 }
 
-window.addEventListener("load", checkLocalStorage());
+// window.addEventListener("load", checkLocalStorage());
 
 // RECUPERER LES DONNEES DE L'API
 
-const token = localStorage.token;
+//onst token = sessionStorage.token;
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjpudWxsLCJsYXN0TmFtZSI6bnVsbCwiZW1haWwiOiJ0ZXN0QHRlc3QuZnIiLCJwYXNzd29yZCI6IiQyYiQxMCRyWGt5d05oZm9CVlM0ZVp1RThsQ2JlZlpNRi53YzgzZ3g5Ry9oWldpYkpCTy9Xc3kzY2NnZSIsImF2YXRhciI6bnVsbCwidGhlbWUiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjEtMDItMDdUMDE6MTE6MTQuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDItMDdUMDE6MTE6MTQuMDAwWiIsImlhdCI6MTYxMzEyOTU4MX0.1rE8GBoyeWuQ-OnoeKjfFsLLi6h_lUG_0FvN2vh0Crw";
+
 
 function requestData () {
     let config = {
@@ -44,10 +45,11 @@ function requestData () {
     };
     fetch("https://simplonews.brianboudrioux.fr/articles", config)
     .then (function (response) {
+        console.log(response);
         switch (response.status) {
             case 403:
-                localStorage.removeItem("token");
-                //redirectionLogin();
+                sessionStorage.removeItem("token");
+                redirectionLogin();
                 break;
             case 200:
                 extractData(response);
@@ -65,6 +67,7 @@ function requestData () {
 function extractData(data) {
     data.json()
     .then(function (object) {
+        console.log(object);
         articlesTreatment(object.articles);
     })
     .catch(function(error) {
@@ -75,10 +78,12 @@ function extractData(data) {
 function articlesTreatment (array) {
     const laUne = document.getElementById("Une");
     const direct = document.getElementById("Direct");
-    const divers = document.getElementById("divers");   
+    const divers = document.getElementById("divers"); 
+
     laUne.innerHTML = `
     <img src="${array[array.length-1].img}" alt="Photo de l'article" class="${array[array.length-1].id}">
     <figcaption class="${array[array.length-1].id}"><h2>Info du jour</h2> ${array[array.length-1].title} </figcaption>`
+    
     direct.innerHTML = `
     <h2>// Direct //</h2>
     <h3 class="${array[array.length-2].id}">${array[array.length-2].title} </h3>
@@ -88,20 +93,29 @@ function articlesTreatment (array) {
     <h3 class="${array[array.length-4].id}">${array[array.length-4].title} </h3>
     <hr>
     `
+    
     divers.innerHTML = ``;
-
+    let count = 0;
     for (let i = array.length-5; i >= 0; i--) {
-        divers.innerHTML += `
-        <div>
-            <figure> <img src="${array[i].img}" alt="Photo de l'article" class="${array[i].id}">
-            </figure>
-            <figcaption class="${array[i].id}">
-            ${array[i].title}
-            </figcaption>
-        </div>
-        `
+        if (count === 6) {
+            return count;
+        }
+        else {
+            count ++
+            divers.innerHTML += `
+            <div>
+                <figure> <img src="${array[i].img}" alt="Photo de l'article" class="${array[i].id}">
+                </figure>
+                <figcaption class="${array[i].id}">
+                ${array[i].title}
+                </figcaption>
+            </div>
+            `
+        }
     }
+
     articleClicked();
+
 }
 
 window.addEventListener("load", requestData);
@@ -113,22 +127,25 @@ function articleClicked() {
     const figcaption = document.querySelectorAll("figcaption");
     const titleDirect = document.querySelectorAll("#Direct h3");
 
-    localStorage.removeItem("id");
+    sessionStorage.removeItem("id");
+
     image.forEach( function (image) {
         image.addEventListener("click", function (){
-            localStorage.setItem("id", image.classList.value);
+            sessionStorage.setItem("id", image.classList.value);
             redirectionArticle();
         })
     })
+
     figcaption.forEach( function (figcaption) {
         figcaption.addEventListener("click", function (){
-            localStorage.setItem("id", figcaption.classList.value);
+            sessionStorage.setItem("id", figcaption.classList.value);
             redirectionArticle();
         })
     })
+    
     titleDirect.forEach( function (titleDirect) {
         titleDirect.addEventListener("click", function (){
-            localStorage.setItem("id", titleDirect.classList.value);
+            sessionStorage.setItem("id", titleDirect.classList.value);
             redirectionArticle();
         })
     })
