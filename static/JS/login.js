@@ -286,7 +286,7 @@ function checkSignUpForm () {
     }
 
     if (lastNameValid && firstNameValid && emailValid && passwordValid){
-        SignUpUser();
+        signUpUser();
     }
     erreur1.addEventListener("click", function(){
         erreur1.classList.add("erreurInactive");

@@ -18,7 +18,7 @@ liens.forEach((lien) => {
 
 // CHECK LA SESSION STORAGE
 function checkLocalStorage () {
-    if (sessionStorage.getItem("token")) {
+    if (!sessionStorage.getItem("token")) {
         redirectionLogin();
     }
 }
@@ -27,13 +27,12 @@ function redirectionLogin () {
     window.location.href = "../../login.html"
 }
 
-// window.addEventListener("load", checkLocalStorage());
+window.addEventListener("load", checkLocalStorage());
 
 // RECUPERER LES DONNEES DE L'API
+window.addEventListener("load", requestData);
 
-//onst token = sessionStorage.token;
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjpudWxsLCJsYXN0TmFtZSI6bnVsbCwiZW1haWwiOiJ0ZXN0QHRlc3QuZnIiLCJwYXNzd29yZCI6IiQyYiQxMCRyWGt5d05oZm9CVlM0ZVp1RThsQ2JlZlpNRi53YzgzZ3g5Ry9oWldpYkpCTy9Xc3kzY2NnZSIsImF2YXRhciI6bnVsbCwidGhlbWUiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjEtMDItMDdUMDE6MTE6MTQuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDItMDdUMDE6MTE6MTQuMDAwWiIsImlhdCI6MTYxMzEyOTU4MX0.1rE8GBoyeWuQ-OnoeKjfFsLLi6h_lUG_0FvN2vh0Crw";
-
+const token = sessionStorage.getItem("token");
 
 function requestData () {
     let config = {
@@ -45,7 +44,6 @@ function requestData () {
     };
     fetch("https://simplonews.brianboudrioux.fr/articles", config)
     .then (function (response) {
-        console.log(response);
         switch (response.status) {
             case 403:
                 sessionStorage.removeItem("token");
@@ -67,7 +65,6 @@ function requestData () {
 function extractData(data) {
     data.json()
     .then(function (object) {
-        console.log(object);
         articlesTreatment(object.articles);
     })
     .catch(function(error) {
@@ -101,36 +98,38 @@ function articlesTreatment (array) {
             return count;
         }
         else {
-            count ++
-            divers.innerHTML += `
-            <div>
+            
+            if (array[i].title==="Un super title" || array[i].title==="Découvrez la nouvelle formation Apple!"){
+                continue;
+            }
+            else {
+
+                count ++
+                divers.innerHTML += `
+                <div>
                 <figure> <img src="${array[i].img}" alt="Photo de l'article" class="${array[i].id}">
                 </figure>
                 <figcaption class="${array[i].id}">
                 ${array[i].title}
                 </figcaption>
-            </div>
-            `
+                </div>
+                `
+            }
         }
+        articleClicked();
     }
-
-    articleClicked();
-
 }
-
-window.addEventListener("load", requestData);
 
 // Eventlistener pour la redirection vers la page article
 
 function articleClicked() {
-    const image = document.querySelectorAll("figure img"); 
+    const image = document.querySelectorAll("figure img");
     const figcaption = document.querySelectorAll("figcaption");
     const titleDirect = document.querySelectorAll("#Direct h3");
 
-    sessionStorage.removeItem("id");
-
     image.forEach( function (image) {
         image.addEventListener("click", function (){
+            sessionStorage.removeItem("id");
             sessionStorage.setItem("id", image.classList.value);
             redirectionArticle();
         })
@@ -138,6 +137,7 @@ function articleClicked() {
 
     figcaption.forEach( function (figcaption) {
         figcaption.addEventListener("click", function (){
+            sessionStorage.removeItem("id");
             sessionStorage.setItem("id", figcaption.classList.value);
             redirectionArticle();
         })
@@ -145,6 +145,7 @@ function articleClicked() {
     
     titleDirect.forEach( function (titleDirect) {
         titleDirect.addEventListener("click", function (){
+            sessionStorage.removeItem("id");
             sessionStorage.setItem("id", titleDirect.classList.value);
             redirectionArticle();
         })
