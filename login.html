@@ -23,12 +23,13 @@
                     <form action="" class="flex" method="POST" >
                         
                         <label> Email *
-                            <input type="email" placeholder="justin.bridou@outlook.com"  name="email" required>
-                        </label>  
-                        <label>Password *
-                            <input type="password" name="password"
-                            minlength="8" >
+                            <input type="email" placeholder="justin.bridou@outlook.com"  name="email">
                         </label>
+                        <div id="loginError1" class="erreurInactive">Veuillez entrer un email valide. </div>  
+                        <label>Password *
+                            <input type="password" name="password" minlength="8">
+                        </label>
+                        <div id="loginError2" class="erreurInactive"">Veuillez entrer un mot de passe valide de 8 caractère minimum. </div>
                         <input type="submit" value="Login">
                         
                     </form>
@@ -48,18 +49,21 @@
                     <form action="" class="flex" method="POST" >
                         
                         <label >Nom *
-                            <input type="text" placeholder="Bridou" name="nom" required > 
+                            <input type="text" placeholder="Bridou" name="nom"  > 
                         </label>
+                        <div id="signUpError1" class="erreurInactive">Veuillez entrer votre Nom.</div>
                         <label >Prénom *
-                            <input type="text" placeholder="Justin" name="Prénom" required > 
+                            <input type="text" placeholder="Justin" name="Prénom" > 
                         </label>
+                        <div id="signUpError2" class="erreurInactive">Veuillez entrer votre Prénom.</div>
                         <label> Email *
-                            <input type="email" placeholder="justin.bridou@outlook.com"  name="email" required>
+                            <input type="email" placeholder="justin.bridou@outlook.com"  name="email" >
                         </label>  
+                        <div id="signUpError3" class="erreurInactive">Veuillez entrer un email valide.</div>
                         <label>Password *
-                            <input type="password" name="password"
-                            minlength="8" required>
+                            <input type="password" name="password" minlength="8" >
                         </label>
+                        <div id="signUpError4" class="erreurInactive">Veuillez entrer un mot de passe valide de 8 caractère minimum.</div>
                         <input type="submit" value="Sign Up">
                         
                     </form>
