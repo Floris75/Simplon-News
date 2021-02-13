@@ -119,6 +119,18 @@ section input {
     padding-left: 4%;
 }
 
+#login div, #SignUp div {
+    font-size: 1.5rem;
+    background-color:orange;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#login div.erreurInactive, #SignUp div.erreurInactive {
+    display: none;
+}
+
 /* FOOTER */
 
 footer {
