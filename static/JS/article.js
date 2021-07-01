@@ -24,7 +24,7 @@ let fetch_config = {
     document.location.href = '../views/home'
 }
  else if(response.status == 403){
-      document.location.href = '../views/login'
+      document.location.href = '../login'
     }
     else{
       response.json()
@@ -63,19 +63,3 @@ console.log(error)
 <h4 id="author">Auteur: ${data.article.author}</h4>`
 
 }
-       
-
-
-
-  
-   
-
-
-  
-     
-    
- 
-    
-
-  
-    
